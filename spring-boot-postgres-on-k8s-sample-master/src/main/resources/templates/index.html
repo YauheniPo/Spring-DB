@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <header><title>Hello</title></header>
+    <body>
+        <tr th:if="${value == null}">
+            <div>No value saved</div>
+        </tr>
+        <tr th:if="${value != null}">
+            <div th:text="${value}"></div>
+        </tr>
+
+        <form method="post" class="form-actions">
+            <input type="text" name="value" />
+            <input type="submit" value="Save Value" onclick="javascript: form.action='/save';"/>
+            <input type="submit" value="Delete Value" onclick="javascript: form.action='/delete';"/>
+        </form>
+    </body>
+</html>
